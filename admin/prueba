@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Registrar Prestamo</title>
+      <meta name="robots" content="noindex, nofollow">
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+      <link href="assets/img/favicon.png" rel="icon">
+      <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      <link href="https://fonts.gstatic.com" rel="preconnect">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+      <link href="assets/css/boxicons.min.css" rel="stylesheet">
+      <link href="assets/css/quill.snow.css" rel="stylesheet">
+      <link href="assets/css/quill.bubble.css" rel="stylesheet">
+      <link href="assets/css/remixicon.css" rel="stylesheet">
+      <link href="assets/css/simple-datatables.css" rel="stylesheet">
+      <link href="assets/css/style.css" rel="stylesheet">
+   </head>
+   <body>
+		<!-- head area and nadBar -->
+      <?php include_once('includes/header.php');?>
+      <?php include_once('includes/slidebar.php');?>
+
+      <main id="main" class="main">
+         <div class="pagetitle">
+            <h1>Registrar préstamo</h1>
+            <nav>
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+                  <li class="breadcrumb-item">Préstamos</li>
+                  <li class="breadcrumb-item active">Registar prestamo</li>
+               </ol>
+            </nav>
+         </div>
+
+         <section class="section">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="card">
+                     <div class="card-body">
+                        
+                        <form class="row g-3 needs-validation" novalidate>
+                        <h5 class="card-title">Datos del cliente</h5>
+                           <div class="col-md-4">
+                              <label for="validationCustom01" class="form-label">DNI</label> <input type="text" class="form-control" id="validationCustom01"  required>
+                              <div class="valid-feedback"> Looks good!</div>
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom02" class="form-label">Nombres </label> <input type="text" class="form-control" id="validationCustom02"  required>
+                              <div class="valid-feedback"> Looks good!</div>
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom02" class="form-label">Apellidos </label> <input type="text" class="form-control" id="validationCustom02"  required>
+                              <div class="valid-feedback"> Looks good!</div>
+                           </div>
+
+                        <h5 class="card-title">Datos del préstamo</h5>
+                           
+                           <div class="col-md-4">
+                              <label for="validationCustom03" class="form-label">Monto</label> <input type="text" class="form-control" id="validationCustom03" placeholder="s/." required>
+                              <div class="invalid-feedback"> Please provide a valid city.</div>
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom04" class="form-label">Interés</label> 
+                              <select class="form-select" id="validationCustom04" required>
+                                 <option selected disabled value="">Seleccionar</option>
+                                 <option value="">Porcentaje</option>
+                                 <option value="">Efectivo</option>
+                              </select>
+                              <div class="invalid-feedback"> Please select a valid state.</div>
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom03" class="form-label">Monto Interés</label> <input type="text" class="form-control" id="validationCustom03" placeholder="% o s/." required>
+                              <div class="invalid-feedback"> Please provide a valid city.</div>
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom04" class="form-label">Forma de pago</label> 
+                              <select class="form-select" id="validationCustom04" required>
+                                 <option selected disabled value="">Seleccionar</option>
+                                 <option value="">Diario</option>
+                                 <option value="">Semanal</option>
+                                 <option value="">Mensual</option>
+                              </select>
+                              <div class="invalid-feedback"> Please select a valid state.</div>
+                           </div>
+
+                           <div class="col-md-4">
+                              <label for="validationCustom05" class="form-label">Fecha de préstamo</label> <input type="date" class="form-control" id="validationCustom05" required>
+                              <div class="invalid-feedback"> Please provide a valid zip.</div>
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom05" class="form-label">Fecha de pago</label> <input type="date" class="form-control" id="validationCustom05" required>
+                              <div class="invalid-feedback"> Please provide a valid zip.</div>
+                           </div>
+                           <div class="col-12 text-center"> <button class="btn btn-secondary" type="submit">Calcular cuota</button></div>
+                           
+                           <!--Cálculo de cuota-->
+                           <div class="col-md-4">
+                              <label for="validationCustom03" class="form-label">Monto</label> <input type="text" class="form-control" id="validationCustom03" placeholder="s/. 100" disabled="true">
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom03" class="form-label">Intereses</label> <input type="text" class="form-control" id="validationCustom03" placeholder="s/. 100" disabled="true">
+                           </div>
+                           <div class="col-md-4">
+                              <label for="validationCustom03" class="form-label">Total a pagar</label> <input type="text" class="form-control" id="validationCustom03" placeholder="s/. 100" disabled="true">
+                           </div>
+
+
+                           <button  class="btn btn-primary">Registrar préstamo</button></div>
+
+                        </form>
+                        </div>
+                     </div>
+          
+                  <!--lista de clientes-->
+                  <div class="col-lg-6">
+                      <div class="card">
+                        <div class="card-body">
+                           <!--include de table customer-->
+                           <?php include_once('list-customers-prest.php');?>
+                        </div>
+                     </div>
+                  </div>
+                  <!--Fin lista de clientes-->
+
+               </div> 
+            </div>
+         </section>
+         
+      </main>
+      <footer id="footer" class="footer">
+        <div class="copyright"> &copy; Copyright <strong><span>Compnay Name</span></strong>. All Rights Reserved</div>
+        <div class="credits"> with love <a href="https://freeetemplates.com/">FreeeTemplates</a></div>
+     </footer>
+     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>  
+       <script src="assets/js/apexcharts.min.js"></script>
+       <script src="assets/js/bootstrap.bundle.min.js"></script>
+       <script src="assets/js/chart.min.js"></script>
+       <script src="assets/js/echarts.min.js"></script>
+       <script src="assets/js/quill.min.js"></script>
+       <script src="assets/js/simple-datatables.js"></script>
+       <script src="assets/js/tinymce.min.js"></script>
+       <script src="assets/js/validate.js"></script>
+       <script src="assets/js/main.js"></script> 
+            
+  </body>
+</html>
